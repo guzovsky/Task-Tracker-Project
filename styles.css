@@ -1,0 +1,224 @@
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/* Reset and base styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;       /* Prevent text overflow */
+}
+
+body {
+  background-color: #25183d;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  color: #ececec;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 40rem;
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background-color: #2d1c47;
+}
+
+.task-tracker-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 3.5rem;
+  width: 100%;
+  border: 2px solid black;
+  margin: 8px auto 0;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  gap: 5px;
+}
+
+.input-group textarea {
+  all: unset;
+  color: #000000;
+  border-radius: 5px;
+  flex: 1;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+textarea:focus {
+  background-color: rgb(226, 226, 226);
+}
+
+.input-group button {
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(192, 192, 192);
+  font-size: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.input-group button:hover {
+  background-color: rgb(109, 109, 109);
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 15px;
+  color: rgba(207, 207, 207, 0.719);
+}
+
+.task-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.task-container {
+  border-bottom: 2px solid #1f1133;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-done {
+  display: none; /* hide the default checkbox */
+}
+
+.checkmark {
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: 1.1rem;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.edit-task {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.temporarily-input {
+  all: unset;
+  flex: 1;
+}
+
+.temporarily-input:focus {
+  background-color: inherit;
+}
+
+/* Add ✅ when checkbox is checked */
+.task-done:checked + .checkmark::after {
+  content: "✅";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task {
+  min-width: 0;
+  transition: all 0.4s ease;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #aaaaaa;
+  transform: scale(0.97);
+  opacity: 0.7;
+}
+
+.trash-can {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes trashShake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0); }
+}
+
+.trash-can.animate {
+  animation: trashShake 0.4s ease;
+}
+
+
+@media screen and (max-width: 380px) {
+  .input-group textarea {
+    min-height: 5rem;
+  }
+}
+
+
+@media screen and (max-width: 315px) {
+  .input-group textarea {
+    min-height: 6rem;
+  }
+}
+
+
+@media screen and (max-width: 300px) {
+  .input-group textarea {
+    min-height: 5rem;
+    flex: 1 1 100%;
+  }
+  
+  .input-group button {
+    flex: 1 1 100%;
+  }
+}
+
+
+@media screen and (max-width: 264px) {
+  .input-group textarea {
+    min-height: 7rem;
+  }
+}
+
+
+@media screen and (max-width: 246px) {
+  .input-group textarea {
+    min-height: 8rem;
+    
+  }
+}

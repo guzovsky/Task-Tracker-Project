@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker Project</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main class="container">
+        <section class="title">
+            <h2>Task Tracker</h2>
+        </section>
+
+        <form class="task-tracker-form" id="task-tracker-form">
+
+            <div class="input-group">
+                <textarea id="input" placeholder="Start writing and press enter to create a task" maxlength="150"></textarea>
+                <button type="submit" id="submit-btn">↵</button>
+            </div>
+
+            <p>Your Tasks:</p>
+
+            <div class="task-list" id="task-list">
+                
+            </div>
+
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
